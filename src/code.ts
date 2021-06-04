@@ -1,7 +1,7 @@
 //vars
-let uiWidth = 184 // default ui width
+let uiWidth = 220 // default ui width
 let uiHeight = 210; // default ui height
-let spacing = 8; // spacing of annotations from top of frame
+let spacing = 16; // spacing of annotations from top of frame
 let updateCount = 0;
 let removeCount = 0;
 
@@ -79,12 +79,12 @@ async function createAnnotations(status) {
 		let annotionFrame = figma.createFrame();
 		annotionFrame.counterAxisSizingMode = 'AUTO';
 		annotionFrame.layoutMode = 'HORIZONTAL';
-		annotionFrame.itemSpacing = 4;
-		annotionFrame.horizontalPadding = 6;
-		annotionFrame.verticalPadding = 4;
+		annotionFrame.itemSpacing = 12;
+		annotionFrame.horizontalPadding = 16;
+		annotionFrame.verticalPadding = 12;
 		annotionFrame.name = 'annotation';
-		annotionFrame.topLeftRadius = 3;
-		annotionFrame.topRightRadius = 3;
+		annotionFrame.topLeftRadius = 4;
+		annotionFrame.topRightRadius = 4;
 
 		//style the stroke
 		annotionFrame.strokes = [{
@@ -94,7 +94,7 @@ async function createAnnotations(status) {
 			blendMode: 'NORMAL',
 			color: hexToFigmaRgb('#DBDBDB')
 		}];
-		annotionFrame.strokeWeight = 1;
+		annotionFrame.strokeWeight = 2;
 		
 
 		//create and style the text node
@@ -103,14 +103,14 @@ async function createAnnotations(status) {
 
 		//define and load the font
 		let fontName = {
-			'family': 'Source Sans Pro',
-			'style': 'Regular'
+			'family': 'Inter',
+			'style': 'Semi Bold'
 		}
 		await figma.loadFontAsync(fontName);
 
 		//apply the font properties to the text node
 		text.fontName = fontName;
-		text.fontSize = 16;
+		text.fontSize = 20;
 		text.lineHeight = {
 			'value': 24,
 			'unit': 'PIXELS'
@@ -119,8 +119,8 @@ async function createAnnotations(status) {
 		//add text to the text node
 		var today = new Date();
 
-		var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-		let statusText = "(" + date + ") " + status.title;
+		var date = today.getDate()+'.'+(today.getMonth()+1)+'.'+today.getFullYear();
+		let statusText = status.title +' – '+ (date);
 		text.characters = statusText;
 
 		//create the icon
@@ -144,7 +144,7 @@ async function createAnnotations(status) {
 		annotation.effects = [{
 			blendMode: 'NORMAL',
 			color: innerShadowColor,
-			offset: {x: 0, y: -2},
+			offset: {x: 0, y: -4},
 			radius: 0,
 			type: 'INNER_SHADOW',
 			visible: true
@@ -248,7 +248,8 @@ async function createAnnotations(status) {
 			//increase the counter
 			count++;
 		});
-		
+		//send success notification
+		figma.notify('Status set: ' + status.title);
 	} else {
 		figma.notify('Please select a top level frame, component, or group');
 	}

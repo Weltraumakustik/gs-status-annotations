@@ -18,12 +18,27 @@
 	//define all of the status that you want here
 	let statuses = [
 		{
-			'title': 'In progress',
+			'title': 'Work in progress',
 			'icon': iconInProgress,
 			'color': '#E93940'
 		},
 		{
-			'title': 'Review',
+			'title': 'Exploration',
+			'icon': iconReview,
+			'color': '#189eff'
+		},
+		{
+			'title': 'Research',
+			'icon': iconReview,
+			'color': '#189eff'
+		},
+		{
+			'title': 'Open for feedback',
+			'icon': iconReview,
+			'color': '#FFCF23'
+		},
+		{
+			'title': 'In Review',
 			'icon': iconReview,
 			'color': '#FFCF23'
 		},
@@ -33,17 +48,17 @@
 			'color': '#376FFF'
 		},
 		{
-			'title': 'Develop',
+			'title': 'In development',
 			'icon': iconDevelop,
 			'color': '#3CCC65'
 		},
 		{
-			'title': 'Complete',
+			'title': 'Done',
 			'icon': iconComplete,
 			'color': '#000000'
 		},
 		{
-			'title': 'Archive',
+			'title': 'Archived',
 			'icon': iconArchive,
 			'color': '#757575'
 		}
@@ -119,8 +134,8 @@
 <div class="flex row justify-content-between align-items-center pr-xxsmall">
 	<!-- Clear buttons -->
 	<div class="flex row clear">
-		<Button on:click={deleteSeletected} variant="tertiary" class="mr-xxsmall">Delete</Button>
-		<Button on:click={toggleDeleteConfirmation} variant="tertiary" destructive>Delete all</Button>
+		<Button on:click={deleteSeletected} variant="tertiary" destructive class="mr-xxsmall">Delete</Button>
+		<Button on:click={toggleDeleteConfirmation} variant="secondary" destructive>Delete all</Button>
 	</div>
 	<!-- refresh icon -->
 	<IconButton on:click={refresh} iconName={IconSwap}></IconButton>
