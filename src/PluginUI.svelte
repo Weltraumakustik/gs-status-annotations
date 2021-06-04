@@ -7,59 +7,57 @@
 	import { Button, IconButton, IconSwap, Type } from 'figma-plugin-ds-svelte';
 	import StatusButton from './components/StatusButton';
 
-	//import all of your svg icons here (12x12 size)
-    import iconInProgress from './assets/icon-progress.svg';
-    import iconReview from './assets/icon-review.svg';
-    import iconApproved from './assets/icon-approved.svg';
-    import iconDevelop from './assets/icon-develop.svg';
-	import iconComplete from './assets/icon-complete.svg';
-	import iconArchive from './assets/icon-archive.svg';
+	// //import all of your svg icons here (12x12 size)
+    // import iconInProgress from './assets/icon-progress.svg';
+    // import iconReview from './assets/icon-review.svg';
+    // import iconApproved from './assets/icon-approved.svg';
+    // import iconDevelop from './assets/icon-develop.svg';
 	
 	//define all of the status that you want here
 	let statuses = [
 		{
 			'title': 'Work in progress',
-			'icon': iconInProgress,
-			'color': '#E93940'
+			'icon': '🚧',
+			'color': '#F24822'
 		},
 		{
 			'title': 'Exploration',
-			'icon': iconReview,
-			'color': '#189eff'
+			'icon': '🏝',
+			'color': '#FF00FF'
 		},
 		{
 			'title': 'Research',
-			'icon': iconReview,
-			'color': '#189eff'
+			'icon': '🔮',
+			'color': '#FF00FF'
 		},
 		{
 			'title': 'Open for feedback',
-			'icon': iconReview,
-			'color': '#FFCF23'
+			'icon': '✋',
+			'color': '#FFEB00'
 		},
 		{
 			'title': 'In Review',
-			'icon': iconReview,
+			'icon': '👀',
 			'color': '#FFCF23'
 		},
 		{
 			'title': 'Approved',
-			'icon': iconApproved,
-			'color': '#376FFF'
+			'icon': '✅',
+			'color': '#1BC47D'
 		},
 		{
 			'title': 'In development',
-			'icon': iconDevelop,
-			'color': '#3CCC65'
+			'icon': '⚙️',
+			'color': '#F24822'
 		},
 		{
 			'title': 'Done',
-			'icon': iconComplete,
-			'color': '#000000'
+			'icon': '💯',
+			'color': '#1BC47D'
 		},
 		{
 			'title': 'Archived',
-			'icon': iconArchive,
+			'icon': '☠️',
 			'color': '#757575'
 		}
 	];

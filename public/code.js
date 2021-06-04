@@ -26,7 +26,7 @@ function __awaiter(thisArg, _arguments, P, generator) {
 }
 
 //vars
-let uiWidth = 220; // default ui width
+let uiWidth = 240; // default ui width
 let uiHeight = 210; // default ui height
 let spacing = 16; // spacing of annotations from top of frame
 let updateCount = 0;
@@ -100,9 +100,9 @@ function createAnnotations(status) {
                     visible: true,
                     opacity: 1,
                     blendMode: 'NORMAL',
-                    color: hexToFigmaRgb('#DBDBDB')
+                    color: hexToFigmaRgb(status.color)
                 }];
-            annotionFrame.strokeWeight = 2;
+            annotionFrame.strokeWeight = 4;
             //create and style the text node
             let text = figma.createText();
             text.name = status.title;
@@ -122,12 +122,19 @@ function createAnnotations(status) {
             //add text to the text node
             var today = new Date();
             var date = today.getDate() + '.' + (today.getMonth() + 1) + '.' + today.getFullYear();
-            let statusText = status.title + ' – ' + (date);
+            let statusText = status.icon + ' ' + status.title + ' – ' + (date);
             text.characters = statusText;
             //create the icon
-            let icon = figma.createNodeFromSvg(status.icon);
-            icon.name = 'icon-' + status.slug;
+            let icon = figma.createText();
+            icon.name = status.icon;
             icon.layoutAlign = 'CENTER';
+            //apply the font properties to the text node
+            icon.fontName = fontName;
+            icon.fontSize = 20;
+            icon.lineHeight = {
+                'value': 24,
+                'unit': 'PIXELS'
+            };
             //add icon and text to annotation
             annotionFrame.insertChild(0, text);
             annotionFrame.insertChild(1, icon);
@@ -230,7 +237,7 @@ function createAnnotations(status) {
                 count++;
             });
             //send success notification
-            figma.notify('Status set: ' + status.title);
+            figma.notify('✅ Status set: ' + status.title);
         }
         else {
             figma.notify('Please select a top level frame, component, or group');
@@ -248,14 +255,14 @@ function deleteSelected() {
             }
         });
         if (removeCount === 1) {
-            figma.notify('1 annotation removed');
+            figma.notify('🚫 1 annotation removed');
         }
         else if (removeCount > 1) {
             figma.notify(removeCount + ' annotations removed');
         }
     }
     else {
-        figma.notify('Please select a frame, component, or group with a status');
+        figma.notify('👋 Please select a frame, component, or group with a status');
     }
     removeCount = 0;
 }
@@ -276,10 +283,10 @@ function deleteAll() {
             node.setRelaunchData({});
         }
     });
-    //remove the plugin relaunch button
-    figma.currentPage.setRelaunchData({});
+    // //remove the plugin relaunch button
+    // figma.currentPage.setRelaunchData({ });
     //notify the user
-    figma.notify('All annotations removed');
+    figma.notify('🚫 All annotations removed');
 }
 //remove the status msg from a frame
 function removeStatus(frame) {
