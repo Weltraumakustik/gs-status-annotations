@@ -3,7 +3,7 @@
 # Status annotations
 A Figma plugin for adding a status annotations to your frames.
 
-The plugin ships with 5 status annotations:
+The plugin ships with 9 status annotations:
 1. 🚧 Work in progress
 2. 🏝 Exploration
 3. 🔮 Research
