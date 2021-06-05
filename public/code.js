@@ -26,8 +26,8 @@ function __awaiter(thisArg, _arguments, P, generator) {
 }
 
 //vars
-let uiWidth = 240; // default ui width
-let uiHeight = 210; // default ui height
+let uiWidth = 260; // default ui width
+let uiHeight = 300; // default ui height
 let spacing = 16; // spacing of annotations from top of frame
 let updateCount = 0;
 let removeCount = 0;

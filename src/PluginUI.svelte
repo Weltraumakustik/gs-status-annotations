@@ -132,8 +132,8 @@
 <div class="flex row justify-content-between align-items-center pr-xxsmall">
 	<!-- Clear buttons -->
 	<div class="flex row clear">
-		<Button on:click={deleteSeletected} variant="tertiary" destructive class="mr-xxsmall">Delete</Button>
-		<Button on:click={toggleDeleteConfirmation} variant="secondary" destructive>Delete all</Button>
+		<Button on:click={deleteSeletected} variant="tertiary" class="mr-xxsmall">Remove selected</Button>
+		<Button on:click={toggleDeleteConfirmation} variant="secondary" destructive>Remove all</Button>
 	</div>
 	<!-- refresh icon -->
 	<IconButton on:click={refresh} iconName={IconSwap}></IconButton>

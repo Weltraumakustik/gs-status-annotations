@@ -1,5 +1,5 @@
 {
-  "name": "svelte-app",
+  "name": "meteor-toolkit-status",
   "version": "1.0.1",
   "scripts": {
     "build": "rollup -c",
