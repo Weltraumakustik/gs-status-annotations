@@ -1,14 +1,18 @@
-![Status Annotations Promo Image](/promo/github.png?raw=true "Status Annotations promo")
+![Status Annotations Promo Image](/promo/cover.png?raw=true "Status Annotations promo")
 
 # Status annotations
 A Figma plugin for adding a status annotations to your frames.
 
 The plugin ships with 5 status annotations:
-1. In progress — _For early explorations, or work in progress designs_
-2. Review — _Needs review from a stakeholder or in a design crit_
-3. Approved — _Design direction is approved, but may need minor tightening/tweaks for developers_
-4. Develop — _Ready for developers to implement_
-5. Complete — _design has been build and shipped_
+1. 🚧 Work in progress
+2. 🏝 Exploration
+3. 🔮 Research
+4. ✋ Open for feedback
+5. 👀 In Review
+6. ✅ Approved
+7. ⚙️ In development
+8. 💯 Done
+9. ☠️ Archived
 
 ## Forking your own version
 The default status annotations may not apply to every team's workflow, so a secondary goal of this plugin was to make it easy to customize with your own annotations. Here is how to get setup.
