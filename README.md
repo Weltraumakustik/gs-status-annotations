@@ -20,7 +20,7 @@ The default status annotations may not apply to every team's workflow, so a seco
 ### 1. Fork this repository 
 Fork or clone this repository. You can also use the the following command:
 ```bash
-npx degit thomas-lowry/status-annotations my-status-annotations
+gh repo clone Weltraumakustik/swag-status-annotations
 ```
 
 ### 2. Install
@@ -36,23 +36,18 @@ npm run dev
 ### 4. Customize
 The plugin UI is built using Svelte for the UI, but if you aren't familiar with Svelte, there isn't much you have to know or do! To start configuring the annotations, open `PluginUI.svelte` in your code editor.
 
-First you will need to import your SVG icons. You can save them to the `src/assets` directory. I have designed each icon on a 12×12 frame.
-```Javascript
-import iconStatusA from './assets/icon-status-a.svg';
-import iconStatusB from './assets/icon-status-b.svg';
-```
 
-Now that you have your icons imported, you need to edit the statuses array. You can add as many as you like, the plugin UI will resize to accommodate the number of statuses that you create. 
+Now that you have everything ready, you need to edit the statuses array. You can add as many as you like, the plugin UI will resize to accommodate the number of statuses that you create. 
 ```Javascript
 let statuses = [
   {
     'title': 'Status name A', //this is the name of the status
-    'icon': iconStatusA, //this is the var which contains your SVG icon above
+    'icon': iconStatusA, //this is the var which contains your emoji
     'color': '#E93940' //this is the unique color for your annotation
   },
   {
     'title': 'Status name B', //this is the name of the status
-    'icon': iconStatusB, //this is the var which contains your SVG icon above
+    'icon': iconStatusB, //this is the var which contains your emoji
     'color': '#E93940' //this is the unique color for your annotation
   }
 ];
